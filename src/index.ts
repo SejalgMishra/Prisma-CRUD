@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { connection } from "./connection";
 import bodyParser from "body-parser";
 import userRoute from "./routes/userRoutes"
+require('dotenv').config();
 
 
 const app = express();

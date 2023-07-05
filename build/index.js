@@ -16,6 +16,7 @@ const express_1 = __importDefault(require("express"));
 const connection_1 = require("./connection");
 const body_parser_1 = __importDefault(require("body-parser"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
+require('dotenv').config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));

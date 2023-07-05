@@ -25,13 +25,17 @@ userController.getUsers = (req, res) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 userController.addUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username, email, password } = req.body;
+    var _b, _c;
+    const { username, email, password, image } = req.body;
+    console.log((_b = req.files) === null || _b === void 0 ? void 0 : _b.location);
+    console.log((_c = req.file) === null || _c === void 0 ? void 0 : _c.location);
     try {
         const user = yield prisma.user.create({
             data: {
                 username,
                 email,
                 password,
+                image,
             },
         });
         res.json(user);
